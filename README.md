@@ -19,4 +19,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   ``` ng add @ngrx/entity ```
 5. ngrx/schematics
   ``` ng add @ngrx/schematics ```
+6. ngrx-store-localstorage
+  ``` pnpm add ngrx-store-localstorage ```
 
