@@ -1,5 +1,9 @@
 import { Routes } from "@angular/router";
+import { LayoutComponent } from "./presentation/views/layout/layout.component";
 
-export const DRAGON_BALL_ROUTES: Routes= [
-
-]
+export default [
+  {
+    path: '',
+    component: LayoutComponent
+  }
+] as Routes

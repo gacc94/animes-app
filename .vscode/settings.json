@@ -5,11 +5,6 @@
     "tab.unfocusedActiveBorder": "#000000",
     "tab.activeBackground": "#2F313C",
     "tab.hoverBackground": "#404859",
-    "tab.border": "#2F313C",
-    "titleBar.border": "#2F313C",
-    "tab.activeBorder": "#0077b6",
-    "activityBar.background": "#540B4E",
-    "titleBar.activeBackground": "#76106D",
-    "titleBar.activeForeground": "#FEFBFE"
+    "tab.border": "#2F313C"
   }
 }

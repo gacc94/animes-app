@@ -1,0 +1,5 @@
+@for (character of characters(); track $index) {
+  <img [src]="character.image" alt="">
+} @empty {
+  <h2>character is empty</h2>
+}

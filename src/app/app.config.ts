@@ -7,6 +7,8 @@ import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { CharacterEffects } from './features/dragon-ball/store/characters/character.effect';
+import { APP_REDUCERS } from './shared/store/app.store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,8 +16,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
-    provideStore(),
+    provideStore(APP_REDUCERS),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideEffects()
+    provideEffects([CharacterEffects])
   ]
 };
