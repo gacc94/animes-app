@@ -1,14 +1,10 @@
 .navbar {
   &__container {
-    border: 1px solid red;
     max-width: 1250px;
     width: 100%;
 
     display: grid;
     grid-template-columns: auto 1fr;
-  }
-  &__title {
-    border: 1px solid green;
   }
   &__logo-img {
     height: 3rem;
@@ -22,6 +18,11 @@
   &__ul {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 2rem;
+  }
+  &__a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s ease-in-out;
   }
 }

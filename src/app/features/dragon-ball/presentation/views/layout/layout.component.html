@@ -1,24 +1,4 @@
 <app-navbar [dataToolbar]="dataNavbar()"></app-navbar>
-<div class="character-list">
-  @for (character of $characters(); track $index) {
-    <mat-card class="example-card" appearance="outlined">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{character.name}}</mat-card-title>
-        <mat-card-subtitle>{{character.race}}</mat-card-subtitle>
-      </mat-card-header>
-      <img [src]="character.image" alt="Photo of a Shiba Inu" width="500" height="500" class="">
-      <mat-card-content>
-        <p>
-          {{character.description}}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-  } @empty {
-    <h2>character is empty</h2>
-  }
+<div class="layout__container container">
+  <router-outlet></router-outlet>
 </div>

@@ -9,34 +9,21 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { NavbarComponent } from '../../../../../shared/components/navbar/navbar.component';
 import { DataNavbar } from '../../../../../shared/interfaces/navbar.interface';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [JsonPipe, MatToolbarModule, MatIconModule, MatCardModule, MatButtonModule, NavbarComponent],
+  imports: [JsonPipe, MatToolbarModule, MatIconModule, MatCardModule, MatButtonModule, NavbarComponent, RouterOutlet],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
 })
-export class LayoutComponent {
-
-  private readonly _store = inject(Store);
+export default class LayoutComponent {
 
   dataNavbar = signal<DataNavbar>({
     sourceImg: 'assets/images/Dragon_Ball_Z_Logo_C.png',
     altImg: 'Dragon_Ball_Z_Logo_C.png',
-    list: ['Characters', 'Planets', 'Transforms']
+    list: ['characters', 'planets', 'transforms']
   })
-
-  $characters = this._store.selectSignal(selectCharacters);
-  $loading = this._store.selectSignal(selectLoaging);
-  page = signal(0);
-  limit = signal(10);
-
-  ngOnInit(): void {
-    this._store.dispatch(loadCharacters({page: this.page(), limit: this.limit()}))
-    this._store.select(selectCharacters).subscribe((characters) => {
-      console.log(characters);
-    });
-  }
 
 }
