@@ -1,0 +1,20 @@
+<div class="navbar__wrapper">
+  <mat-toolbar color="primary">
+    <div class="navbar__container container">
+        <h1 class="navbar__title">
+          <img [src]="dataToolbar().sourceImg" [alt]="dataToolbar().altImg" class="navbar__logo-img">
+        </h1>
+        <div class="navbar__items">
+          <ul class="navbar__ul">
+            @for (item of dataToolbar().list; track $index) {
+              <li class="navbar__li">
+                {{item}}
+              </li>
+            }
+          </ul>
+        </div>
+    </div>
+
+  </mat-toolbar>
+</div>
+

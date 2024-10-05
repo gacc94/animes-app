@@ -1,0 +1,27 @@
+.navbar {
+  &__container {
+    border: 1px solid red;
+    max-width: 1250px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+  &__title {
+    border: 1px solid green;
+  }
+  &__logo-img {
+    height: 3rem;
+    max-height: 100%;
+    width: auto;
+  }
+  &__items {
+    display: grid;
+    justify-content: center;
+  }
+  &__ul {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}
