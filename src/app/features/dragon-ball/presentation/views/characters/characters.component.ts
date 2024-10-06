@@ -4,6 +4,7 @@ import { loadCharacters,selectLoaging, selectMeta, selectTotalCharacters } from 
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { CardListComponent } from '../../components/card-list/card-list.component';
 import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
+import { SearchComponent } from '../../components/search/search.component';
 
 @Component({
   selector: 'app-characters',
@@ -12,6 +13,7 @@ import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
     LoadingComponent, 
     CardListComponent, 
     InfiniteScrollDirective,
+    SearchComponent
   ],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.scss'

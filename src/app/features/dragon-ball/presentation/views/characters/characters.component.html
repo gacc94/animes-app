@@ -1,9 +1,10 @@
+<app-search></app-search>
 <div infiniteScroll
   [infiniteScrollDistance]="2"
   [infiniteScrollThrottle]="50"
   (scrolled)="onScroll($event)"
   [scrollWindow]="true">
-  <app-card-list></app-card-list>
+  <app-card-list/>
 </div>
 @if (loading()) { <app-loading/> }
 

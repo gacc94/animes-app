@@ -1,9 +1,8 @@
-<!-- <h2>{{total()}}</h2> -->
 <div class="character__list">
   @for (item of characterList(); track $index) {
       <app-card [item]="item"></app-card>
-  } 
-  <!-- @empty {
-    <h2>character is empty</h2>
-  } -->
+  }
+  @empty {
+    <h2>character List is empty</h2>
+  }
 </div>

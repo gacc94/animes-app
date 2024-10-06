@@ -17,4 +17,9 @@ export const totalCharacterAction = createAction(
   props<{total: number}>()
 );
 
-export const {loadCharacters, loadCharactersError, loadCharactersSuccess} = characterActions
+export const characterListAction = createAction(
+  'Character List Action',
+  props<{characters: Character[]}>()
+);
+
+export const {loadCharacters, loadCharactersSuccess, loadCharactersError} = characterActions

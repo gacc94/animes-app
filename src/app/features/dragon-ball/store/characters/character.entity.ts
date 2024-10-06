@@ -9,7 +9,6 @@ export interface CharacterState extends EntityState<Character> {
   error: string | null;
   meta: Meta | null;
   links: Links | null;
-  total: number
 }
 
 export const adapter: EntityAdapter<Character> = createEntityAdapter<Character>({
@@ -22,5 +21,8 @@ export const initialState: CharacterState = adapter.getInitialState({
   error: null,
   meta: null,
   links: null,
-  total: 0
 });
+
+export const initialTotalState: number = 0
+
+export const initialCharacterListState: Readonly<Character[]> = []
