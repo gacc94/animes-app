@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
-import { adapter, initialState } from './charcater.entity';
-import { loadCharacters, loadCharactersError, loadCharactersSuccess } from './character.action';
+import { adapter, initialState } from './character.entity';
+import { loadCharacters, loadCharactersError, loadCharactersSuccess, totalCharacterAction } from './character.action';
+import { state } from '@angular/animations';
 
 export const characterReducer = createReducer(
   initialState,
@@ -11,11 +12,16 @@ export const characterReducer = createReducer(
     adapter.setAll(characters, { ...state, loading: false, meta, links })
   ),
   on(loadCharactersError, (state, { error }) => ({
-    ...state,
-    loading: false,
-    error
-  }))
+    ...state, loading: false, error
+  })),
 );
+
+const initialTotalState: number = 0
+
+export const totalCharacterReducer = createReducer(
+  initialTotalState,
+  on(totalCharacterAction, (state, { total }) => (total))
+)
 
 export const {
   selectAll: selectAllCharacters,

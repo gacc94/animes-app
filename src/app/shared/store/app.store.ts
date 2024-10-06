@@ -1,10 +1,12 @@
 import { ActionReducerMap } from "@ngrx/store";
-import { characterReducer, CharacterState } from "../../features/dragon-ball/store/characters";
+import { characterReducer, CharacterState, totalCharacterReducer } from "@features/dragon-ball/store/characters";
 
 export interface AppState {
   characters: CharacterState;
+  totalCharacters: number,
 }
 
 export const APP_REDUCERS: ActionReducerMap<AppState> = {
-  characters: characterReducer
+  characters: characterReducer,
+  totalCharacters: totalCharacterReducer
 }

@@ -22,3 +22,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 6. ngrx-store-localstorage
   ``` pnpm add ngrx-store-localstorage ```
 
+# Instalacion Infinity Scroll
+  ``` pnpm add ngx-infinite-scroll ```
+
+

@@ -1,0 +1,47 @@
+.character {
+  &__card {
+    box-shadow: hsla(0, 0%, 0%, 0.35) 0px 5px 15px;
+    // overflow: hidden;
+    display: block;
+    border-radius: 1rem;
+  }
+
+  &__clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__content-img {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin: 0;
+
+    & img{
+      position: relative;
+      z-index: 2;
+      width: auto;
+      height: 320px;
+      transition: all .3s ease;
+      object-fit: contain;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__footer {
+    padding: 1.25rem;
+    background-color: var(--container-color);
+    color: white;
+    height: 100%;
+    height: max-content;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+}

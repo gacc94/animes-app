@@ -53,6 +53,9 @@ importers:
       ngrx-store-localstorage:
         specifier: ^18.0.0
         version: 18.0.0(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(@ngrx/store@18.0.2(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))
+      ngx-infinite-scroll:
+        specifier: ^18.0.0
+        version: 18.0.0(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))
       rxjs:
         specifier: ~7.8.0
         version: 7.8.1
@@ -3254,6 +3257,12 @@ packages:
       '@angular/common': ^18.0.1
       '@angular/core': ^18.0.1
       '@ngrx/store': ^18.0.0
+
+  ngx-infinite-scroll@18.0.0:
+    resolution: {integrity: sha512-D183TDwpsd9Zl56UmItsl3RzHdN25srAISfg6lc3A8mEKkEgOq0s7ZzRAYcx8DHsAkMgtZqjIPEvMifD3DOB/g==}
+    peerDependencies:
+      '@angular/common': '>=18.0.0 <19.0.0'
+      '@angular/core': '>=18.0.0 <19.0.0'
 
   nice-napi@1.0.2:
     resolution: {integrity: sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA==}
@@ -7820,6 +7829,12 @@ snapshots:
       '@angular/core': 18.2.7(rxjs@7.8.1)(zone.js@0.14.10)
       '@ngrx/store': 18.0.2(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
       deepmerge: 4.3.1
+      tslib: 2.7.0
+
+  ngx-infinite-scroll@18.0.0(@angular/common@18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10)):
+    dependencies:
+      '@angular/common': 18.2.7(@angular/core@18.2.7(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1)
+      '@angular/core': 18.2.7(rxjs@7.8.1)(zone.js@0.14.10)
       tslib: 2.7.0
 
   nice-napi@1.0.2:
