@@ -1,6 +1,6 @@
 import { createFeature, createFeatureSelector, createSelector } from '@ngrx/store';
-import { characterReducer, selectAllCharacters } from './chracter.reducer';
-import { adapter, characterKey, CharacterState } from './character.entity';
+import { characterReducer, selectAllCharacters, selectAllFilterCharacters } from './chracter.reducer';
+import { adapter, CharacterFilterState, characterKey, CharacterState } from './character.entity';
 import { Character } from './charcater.model';
 
 export const characterFeature = createFeature({
@@ -20,6 +20,7 @@ export const totalCharacterSelectFeature = createFeatureSelector<number>('totalC
 
 export const characterListSelectFeature = createFeatureSelector<Readonly<Character[]>>('characterList')
 
+export const characterFilterSelectFeature = createFeatureSelector<CharacterFilterState>('characterFilter');
 /**
  * * **********************  SELECTORS  ************************
  */
@@ -48,7 +49,7 @@ export const selectCharacterList = createSelector(
   (state) => state
 )
 
-// export const selectCharacterList = createSelector(
-//   characterSelectFeature,
-//   (state) => state.characters,
-// )
+export const selectCharacterFilter = createSelector(
+  characterFilterSelectFeature,
+  (state) => state.entities
+)

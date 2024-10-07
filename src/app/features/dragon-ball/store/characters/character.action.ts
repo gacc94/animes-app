@@ -12,6 +12,15 @@ const characterActions = createActionGroup({
   }
 });
 
+const characterFilterActions = createActionGroup({
+  source: 'characterFilter',
+  events: {
+    'Load Characters Filter': props<{ name: string; race: string }>(),
+    'Load Characters Filter Success': props<{ characters: Character[] }>(),
+    'Load Characters Filter Error': props<{ error: string }>(),
+  }
+});
+
 export const totalCharacterAction = createAction(
   'Total Character Action',
   props<{total: number}>()
@@ -22,4 +31,5 @@ export const characterListAction = createAction(
   props<{characters: Character[]}>()
 );
 
-export const {loadCharacters, loadCharactersSuccess, loadCharactersError} = characterActions
+export const { loadCharacters, loadCharactersSuccess, loadCharactersError } = characterActions
+export const { loadCharactersFilter, loadCharactersFilterSuccess, loadCharactersFilterError } = characterFilterActions

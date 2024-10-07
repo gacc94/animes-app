@@ -21,4 +21,9 @@ export class CharacterService {
       delay(2000)
     );
   }
+
+  getWithFilter(name: string) {
+    const url = `${this.apiUrl}?name=${name}`;
+    return this._http.get<Character[]>(url);
+  }
 }

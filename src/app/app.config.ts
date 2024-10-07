@@ -7,7 +7,7 @@ import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { CharacterEffects } from './features/dragon-ball/store/characters/character.effect';
+import { CharacterEffects, CharacterFilterEffects } from './features/dragon-ball/store/characters/character.effect';
 import { APP_REDUCERS } from './shared/store/app.store';
 
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
@@ -21,6 +21,6 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(InfiniteScrollModule),
     provideStore(APP_REDUCERS),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideEffects([CharacterEffects])
+    provideEffects([CharacterEffects, CharacterFilterEffects])
   ]
 };

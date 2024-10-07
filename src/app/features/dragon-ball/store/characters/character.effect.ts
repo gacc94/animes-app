@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CharacterService } from '../../services/character.service';
-import { loadCharacters, loadCharactersSuccess } from './character.action';
+import { loadCharacters, loadCharactersFilter, loadCharactersFilterError, loadCharactersFilterSuccess, loadCharactersSuccess } from './character.action';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -31,3 +31,30 @@ export class CharacterEffects {
   );
 
 }
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CharacterFilterEffects {
+
+  private readonly _actions$ = inject(Actions);
+  private readonly _characterService = inject(CharacterService);
+
+  loadFilterCharacter$ = createEffect(() =>
+    this._actions$.pipe(
+      ofType(loadCharactersFilter),
+      switchMap(({name, race}) => {
+        return this._characterService.getWithFilter(name).pipe(
+          map((characters) => {
+            return loadCharactersFilterSuccess({ characters });
+          }),
+          catchError((error) =>
+            of(loadCharactersFilterError(error))
+          )
+        )
+      })
+    )
+  );
+
+}
+

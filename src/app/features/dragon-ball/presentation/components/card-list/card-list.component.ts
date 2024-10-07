@@ -26,10 +26,8 @@ export class CardListComponent {
   total = computed(() => this.characterList().length);
 
   charactersEffect: EffectRef = effect((_) => {
-      this._store.dispatch(characterListAction({characters: this.items()}));
-      this._store.dispatch(totalCharacterAction({total: this.total()}));
-    }, { allowSignalWrites: true })
+    this._store.dispatch(characterListAction({ characters: this.items() }));
+    this._store.dispatch(totalCharacterAction({ total: this.total() }));
+  }, { allowSignalWrites: true })
 
-  ngOnInit(): void {
-  }
 }
